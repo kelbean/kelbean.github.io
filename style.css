@@ -1,0 +1,965 @@
+/* Importing the fonts I'll be using */
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General classes to style throughout the entire website*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #090909;
+}
+
+li, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Header & NavBar */
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.header {
+    display: flex;
+    position: sticky; 
+    top: 0;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #1D1D1D;
+    padding: 0 60px;
+    height: 75px;
+    z-index: 999;
+}
+
+/* ATLUS Logo */
+
+.header-left {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.header-left img {
+    height: 40px;
+    width: auto;
+    display: block;
+    cursor: pointer;
+}
+
+/* NavBar */
+
+.navbar ul {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 5px;
+    align-items: center;
+}
+
+.navbar li a {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(172, 172, 172);
+    text-decoration: none;
+}
+
+.navbar li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    transition: width 0.5s ease;
+    margin-top: 5px;
+}
+
+/* NavBar Hover Animations */
+
+#home::after {
+  background-color: #EB323D;
+}
+
+#games::after {
+  background-color: #FDF75F;
+}
+
+#news::after {
+  background-color: #56CBEC;
+}
+
+#reviews::after {
+  background-color: #81F855;
+}
+
+#gallery::after {
+  background-color: #B255F8;
+}
+
+.navbar a:hover::after {
+    width: 100%
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* Rainbow stripe at the edge of the header */
+.header-right {
+    margin-left: 50px;
+    display: flex;
+    align-items: stretch;
+    flex: 0 0 auto;
+    height: 100%;
+}
+
+.header-right img {
+    height: 100%;
+    display: block;
+}
+
+/* 
+===== HOME PAGE =====
+*/
+
+/* Home & Games hero section */
+
+.hero-section, .games-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide,
+.slide-active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 60px 0 50px 160px;
+  clip-path: inset(0 0 15% 0);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide-active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Content (Left Side) */
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 110px;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.buttons {
+    display: flex;
+    gap: 26px;
+}
+
+.logo {
+  max-width: 350px;
+  height: auto;
+}
+
+/* Buttons */
+
+.buyButton {
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: rgb(243, 243, 243);
+    color: black;
+    border-radius: 150px;
+    transition: background-color 0.6s ease, color 0.6s ease, border 0.6s ease;
+}
+
+.trailerButton {
+    padding: 12px 22px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 150px;
+    transition: background-color 0.6s ease, color 0.6s ease, border 0.6s ease;
+}
+
+.buyButton:hover {
+  background-color: white;
+}
+
+.trailerButton:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Content IDs to uniquely identify each game */
+
+#p4g-content {
+    gap: 35px;
+    padding-bottom: 150px;
+}
+
+#p5r-logo {
+    max-width: 360px;
+    height: auto;
+}
+
+#p5r-content {
+    gap: 20px;
+    padding-bottom: 140px;
+}
+
+/* Cover (Right Side) */
+
+.cover {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+#p4g-figure {
+  transform: translateX(-60px);
+}
+
+.figure {
+  max-height: 120vh;
+  width: auto;
+}
+
+/* Arrow Navigation */
+.nav-arrows {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 30px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.nav-arrows button {
+  pointer-events: all;
+  font-size: 2rem;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-arrows button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Keyframes for hero section fade animations */
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+/* Utility classes to apply them dynamically in the Javascript */
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease forwards;
+}
+.fade-in-right {
+  animation: fadeInRight 0.6s ease forwards;
+}
+.fade-out-left {
+  animation: fadeOutLeft 0.6s ease forwards;
+}
+.fade-out-right {
+  animation: fadeOutRight 0.6s ease forwards;
+}
+
+/* About section */
+
+.about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.about h2 {
+    font-family: 'Anybody', sans-serif;
+    font-weight: 700;
+}
+
+.about p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.persona-about-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 85px 100px;
+    gap: 95px;
+}
+
+.about-image-1 img {
+    max-width: 620px;
+    height: auto;
+}
+
+.abt-content-1 {
+    color: white;
+}
+
+.abt-content-1 h2 {
+    font-size: 65px;
+    padding-bottom: 15px;
+}
+
+.abt-content-1 p {
+    margin-right: 35px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* About section 2 */
+
+.persona-about-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 120px 130px 80px;
+    gap: 70px;
+    background-color: #020202;
+}
+
+.about-image-2 img {
+    max-width: 490px;
+    height: auto;
+}
+
+.abt-content-2 {
+    color: white;
+    margin-left: 50px;
+}
+
+.abt-content-2 h2 {
+    margin-right: 30px;
+    font-size: 65px;
+    padding-bottom: 15px;
+}
+
+.abt-content-2 p {
+    line-height: 1.5;
+    margin-right: 30px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 18px;
+}
+
+/* New release trailer */
+
+.new-release-trailer {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 120px 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 30px;
+    background-color: transparent;
+    background-image: url(images/phantom-x-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.releaseTitle h1 {
+    font-family: 'Anybody', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    text-align: left;
+    color: white;
+}
+
+.releaseTitle img {
+    width: 120px;
+    padding-top: 20px;
+}
+
+/* 
+===== GAMES PAGE =====
+*/
+
+/* Hero section for games page */
+
+.hero-bg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #030303;
+}
+
+.hero-bg .games-heroImage {
+    width: 600px;
+    animation: fade-right 0.6s ease forwards;
+}
+
+.heroTitle {
+    display: flex;
+    flex-direction: column;
+    padding-left: 125px;
+    color: white;
+    animation: fade-up 0.6s ease forwards;
+}
+
+.heroTitle h2 {
+    font-family: 'Anybody', sans-serif;
+    font-weight: 600;
+    font-size: 92px;
+}
+
+.heroTitle p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    margin-right: 40px;
+}
+
+.heroTitle img {
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+/* Keyframes for fade up animations */
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Games list */
+
+.all-games {
+    padding: 20px 80px 90px 80px;
+}
+
+.featured-games h2 {
+    font-family: 'Anybody', sans-serif;
+    font-size: 48px;
+    color: white;
+}
+
+.games-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.card-cover {
+    width: 100%;
+    height: 450px;
+    padding-top: 20px;
+    background-color: transparent;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(81, 81, 81, 0.1);
+}
+
+.card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.game-container {
+    font-family: 'Montserrat', sans-serif;
+    width: 300px;
+}
+
+.game-container h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.game-container p {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: gray;
+}
+
+.platform-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.platform-icons img {
+    width: 25px;
+    filter: invert(1);
+}
+
+.game-link {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.game-link:hover {
+    transform: scale(1.03);
+}
+
+/* Persona classics */
+
+.persona-classics {
+    background-color: #020202;
+    width: 100%;
+    padding: 90px 80px;
+}
+
+.persona-classics h2 {
+    font-family: 'Anybody', sans-serif;
+    font-size: 48px;
+    color: white;
+}
+
+/* 
+===== NEWS PAGE =====
+*/
+
+/* News page hero section */
+
+.news-heroImage {
+    width: 800px;
+    animation: fade-right 0.6s ease forwards;
+}
+
+/* News cards */
+
+.news-list {
+    padding: 120px 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px
+}
+
+.news-card {
+    background-color: #383838;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 350px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.news-content {
+    padding: 20px 20px 40px 20px;
+}
+
+.news-content p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.news-content p:first-child {
+    font-size: 16px;
+    color: #aeaeae;
+    margin-bottom: 8px;
+}
+
+.news-content h3 {
+    margin-bottom: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.news-content p:last-child {
+    font-size: 12px;
+    font-weight: 400;
+    color: #cbcbcb;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* 
+===== REVIEWS PAGE =====
+*/
+
+/* Hero section for reviews page */
+
+.reviews-heroImage {
+    width: 800px;
+    animation: fade-right 0.6s ease forwards;
+}
+
+/* Review cards */
+
+.reviews-list {
+    padding: 120px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background-color: #383838;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 550px;
+    height: 200px;
+    display: flex;
+    cursor: pointer;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+}
+
+.rating {
+    background-color: rgb(34, 167, 34);
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.rating p {
+    font-family: 'Anybody', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+}
+
+.review-details {
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.review-details h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.review-details p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: justify;
+}
+
+/* 
+===== GALLERY PAGE =====
+*/
+
+/* Gallery page hero section*/
+
+.gallery-heroImage {
+    width: 800px;
+    animation: fade-right 0.6s ease forwards;
+}
+
+/* Gallery images */
+
+.gallery {
+    padding: 125px 80px;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.persona-image {
+  flex: 1 1 calc(33.333% - 16px);
+  max-width: calc(33.333% - 16px);
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #222;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.persona-image:hover {
+  transform: scale(1.05);
+}
+
+.persona-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Footer */
+
+footer {
+    background-color: rgb(23, 23, 23);
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 50px 80px 50px 80px;
+}
+
+/* Top of the footer */
+
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.stayConnected {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    color: white
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socials a i {
+    font-size: 30px;
+    color: black;
+    opacity: 0.9;
+}
+
+/* Social media icon hover animations */
+
+#facebook:hover {
+    background-color: #3b579d;
+    transition: 0.5s ease;
+}
+
+#instagram:hover {
+    background-color: #c237a8;
+    transition: 0.5s ease;
+}
+
+#twitter:hover {
+    background-color: #2d9ad1;
+    transition: 0.5s ease;
+}
+
+#reddit:hover {
+    background-color: #ff4500;
+    transition: 0.5s ease;
+}
+
+#youtube:hover {
+    background-color: #cd201f;
+    transition: 0.5s ease;
+}
+
+.socials a:hover i {
+    color: white;
+    transition: 0.5s ease;
+}
+
+/* Bottom of the footer */
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.companyName img {
+    max-width: 150px;
+}
+
+.footerLinks ul {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    list-style: none;
+    text-decoration: none;
+    gap: 70px;
+}
+
+.footerLinks ul li a {
+    font-size: 18px;
+}
+
+/* Footer bar */
+
+.footer-bar {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+    color: rgb(115, 115, 115);
+    padding: 15px;
+}
+
+.footer-bar p {
+    text-align: center;
+}
+
+/* Fade in animation classes to use in Javascript to trigger when scrolling */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

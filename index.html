@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Website</title>
+    <link rel="stylesheet" href="style.css" type="text/css"> <!-- Linking to the css file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+
+            <div class="header-left">
+                <img src="images/atlus.svg" alt="ATLUS" href="">
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a id="home" href="index.html">HOME</a></li>
+                    <li><a id="games" href="pages/games.html">GAMES</a></li>
+                    <li><a id="news" href="pages/news.html">NEWS</a></li>
+                    <li><a id="reviews" href="pages/reviews.html">REVIEWS</a></li>
+                    <li><a id="gallery" href="pages/gallery.html">GALLERY</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <img src="images/rainbow.png" alt="rainbow">
+            </div>
+
+        </header>
+
+        <section class="hero-section">
+            
+            <div class="slide-active" style="background-image: url('images/p3r-bg.png'); object-fit: cover;">
+                <div class="content">
+                    <img src="images/p3r-logo.png" class="logo" alt="Persona 3 Reload Logo">
+                    <div class="buttons">
+                        <button class="buyButton" onclick="window.open('https://store.steampowered.com/developer/Sega/sale/persona3reload', '_blank')">BUY NOW</button>
+                        <button class="trailerButton" onclick="window.open('https://youtu.be/2hUxmiN2Qdc?si=RSh_hw_2CaG4TtHb', '_blank')">WATCH TRAILER</button>
+                    </div>
+                </div>
+
+                <div class="cover">
+                    <img src="images/p3r-cover.png" class="figure" alt="Persona 3 Reload Cover">
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('images/p4g-bg.png'); object-fit: cover;">
+                <div class="content" id="p4g-content">
+                    <img src="images/p4g-logo.png" class="logo" id="p4g-logo" alt="Persona 4 Golden Logo">
+                    <div class="buttons">
+                        <button class="buyButton" onclick="window.open('https://store.steampowered.com/app/1113000/Persona_4_Golden/', '_blank')">BUY NOW</button>
+                        <button class="trailerButton" onclick="window.open('https://youtu.be/jWO_Nlfgek0?si=z-I6ipqmh92TtvBV', '_blank')">WATCH TRAILER</button>
+                    </div>
+                </div>
+
+                <div class="cover" id="p4g-cov">
+                    <img src="images/p4g-cover.png" class="figure" id="p4g-figure" alt="Persona 4 Golden Cover">
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('images/p5r-bg.png'); object-fit: cover;">
+                <div class="content" id="p5r-content">
+                    <img src="images/p5r-logo.png" class="logo" id="p5r-logo" alt="Persona 5 Royal Logo">
+                    <div class="buttons">
+                        <button class="buyButton" onclick="window.open('https://store.steampowered.com/app/1687950/Persona_5_Royal/', '_blank')">BUY NOW</button>
+                        <button class="trailerButton" onclick="window.open('https://youtu.be/SKpSpvFCZRw?si=kMix2Bk_OZ941Hlw', '_blank')">WATCH TRAILER</button>
+                    </div>
+                </div>
+
+                <div class="cover">
+                    <img src="images/p5r-cover.png" class="figure" alt="Persona 5 Royal Cover">
+                </div>
+            </div>
+
+            <div class="nav-arrows">
+                <button id="prev" disabled>&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="persona-about-1">
+                <div class="about-image-1 fade-in" style="transition-delay: 0s;">
+                    <img src="images/about-trio.png" alt="about">
+                </div>
+
+                <div class="abt-content-1 fade-in" style="transition-delay: 0.3s;">
+                    <h2>WHAT IS PERSONA?</h2>
+                    <p>Persona is a critically acclaimed role-playing game (RPG) series developed by Atlus, known for its unique blend of traditional turn-based combat, deep character development, and social simulation.</p>
+                </div>
+            </div>
+
+            <div class="persona-about-2">
+                <div class="abt-content-2 fade-in" style="transition-delay: 0s;">
+                    <h2>STORY & OVERVIEW</h2>
+                    <p>
+                        A spin-off of the Shin Megami Tensei franchise, Persona follows high school students who lead double lives—balancing everyday life, friendships, and school while secretly battling supernatural threats using manifestations of their inner selves called "Personas." 
+                        <br>
+                        <br>
+                        Each game explores psychological and philosophical themes such as identity, rebellion, and the duality of human nature, set against stylish visuals, memorable soundtracks, and modern urban settings. Popular titles like Persona 3, Persona 4, and Persona 5 have earned global praise for pushing the boundaries of storytelling in video games.
+                    </p>
+                </div>
+
+                <div class="about-image-2 fade-in" style="transition-delay: 0.3s;">
+                    <img src="images/igor.png" alt="about 2">
+                </div>
+            </div>
+        </section>
+
+        <section class="new-release-trailer fade-in" style="transition-delay: 0s;">
+            <div class="releaseTitle fade-in" style="transition-delay: 0.2s;">
+                <h1>PERSONA 5: THE PHANTOM X <br> RELEASE TRAILER</h1>
+                <img src="images/rainbow-divider.png">
+            </div>
+            <div class="trailerVideo fade-in" style="transition-delay: 0.6s;">
+                <iframe style="border-radius: 15px;" width="692" height="389" src="https://www.youtube.com/embed/5ULiusPxQG4?si=AG7DuvrZKb_XS9cO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footerContainer">
+                <div class="footerTop">
+                    <div class="stayConnected">
+                        <p>Stay connected</p>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/AtlusWest/" target="_blank" id="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/atlus_west" target="_blank" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/Atlus_West" target="_blank" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.reddit.com/r/PERSoNA/" target="_blank" id="reddit"><i class="fa-brands fa-reddit"></i></a>
+                        <a href="https://www.youtube.com/atlus" target="_blank" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="footerBottom">
+                    <div class="companyName">
+                        <img src="images/atlus.svg">
+                    </div>
+
+                    <div class="footerLinks">
+                        <ul>
+                            <li><a href="pages/news.html">News</a></li>
+                            <li><a href="https://atlus.com/contact/" target="_blank">Support</a></li>
+                            <li><a href="https://careers.sega.com/" target="_blank">Careers</a></li>
+                            <li><a href="https://privacy.sega.com/en/sega-of-america-inc-privacy-policy" target="_blank">Privacy</a></li>
+                            <li><a href="https://atlus.com/company/" target="_blank">Company</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bar">
+                <p>&copy; 2025 Persona Fan Project. All content is fan-made. Persona is a trademark of ATLUS. Website design by Kelvin.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
