@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews Page</title>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+
+            <div class="header-left">
+                <img src="../images/atlus.svg" alt="ATLUS" href="">
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a id="home" href="../index.html">HOME</a></li>
+                    <li><a id="games" href="games.html">GAMES</a></li>
+                    <li><a id="news" href="news.html">NEWS</a></li>
+                    <li><a id="reviews" href="reviews.html">REVIEWS</a></li>
+                    <li><a id="gallery" href="gallery.html">GALLERY</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <img src="../images/rainbow.png" alt="rainbow">
+            </div>
+
+        </header>
+
+        <section class="reviews-hero-section">
+            <div class="hero-bg">
+                <div class="heroTitle">
+                    <h2>REVIEWS</h2>
+                    <img src="../images/rainbow-divider.png">
+                    <p>See what players are saying.</p>
+                </div>
+
+                <img src="../images/joker-hero.png" alt="Games Background" class="reviews-heroImage">
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="reviews-list fade-in">
+                <div class="review-card">
+                    <div class="rating">
+                        <p>10</p>
+                    </div>
+
+                    <div class="review-details">
+                        <h2>T.J. Hafer, IGN on Persona 5 Royal:</h2>
+                        <p>Persona 5 Royal takes an all-time great JRPG and makes it even greater. Going above and beyond a re-release or a remaster, almost everything has been expanded and improved with an entire game’s worth of new content and improvements.</p>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="rating">
+                        <p>9</p>
+                    </div>
+
+                    <div class="review-details">
+                        <h2>Drew Swanson, GameRant on Persona 3 Reload:</h2>
+                        <p>Persona 3 Reload adds enough content to feel like a fresh experience for veterans while improving upon the original's gameplay to make the game approachable for newcomers.</p>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="rating">
+                        <p>93</p>
+                    </div>
+
+                    <div class="review-details">
+                        <h2>DarkStation, Metacritic on Persona 4 Golden:</h2>
+                        <p>A great story, genuine humor and excellent combat, Persona 4 Golden is the complete package. There is no reason why this game shouldn't be part of your Vita's library.</p>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="rating">
+                        <p>10</p>
+                    </div>
+
+                    <div class="review-details">
+                        <h2>Michael Higham, GameSpot on Persona 5 Royal:</h2>
+                        <p>Beyond a plethora of superb gameplay refinements and features that improve an already-rich RPG comes a momentous new story arc seeded within the original narrative and paid off in full by the end.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="footerContainer">
+                <div class="footerTop">
+                    <div class="stayConnected">
+                        <p>Stay connected</p>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/AtlusWest/" target="_blank" id="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/atlus_west" target="_blank" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/Atlus_West" target="_blank" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.reddit.com/r/PERSoNA/" target="_blank" id="reddit"><i class="fa-brands fa-reddit"></i></a>
+                        <a href="https://www.youtube.com/atlus" target="_blank" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="footerBottom">
+                    <div class="companyName">
+                        <img src="../images/atlus.svg">
+                    </div>
+
+                    <div class="footerLinks">
+                        <ul>
+                            <li><a href="pages/news.html">News</a></li>
+                            <li><a href="https://atlus.com/contact/" target="_blank">Support</a></li>
+                            <li><a href="https://careers.sega.com/" target="_blank">Careers</a></li>
+                            <li><a href="https://privacy.sega.com/en/sega-of-america-inc-privacy-policy" target="_blank">Privacy</a></li>
+                            <li><a href="https://atlus.com/company/" target="_blank">Company</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bar">
+                <p>&copy; 2025 Persona Fan Project. All content is fan-made. Persona is a trademark of ATLUS. Website design by Kelvin.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('Fade-in test running');
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('Element visible:', entry.target);
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+        fadeInElements.forEach(el => observer.observe(el));
+    });
+    </script>
+</body>
+</html>

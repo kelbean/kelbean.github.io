@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+
+            <div class="header-left">
+                <img src="../images/atlus.svg" alt="ATLUS" href="">
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a id="home" href="../index.html">HOME</a></li>
+                    <li><a id="games" href="games.html">GAMES</a></li>
+                    <li><a id="news" href="news.html">NEWS</a></li>
+                    <li><a id="reviews" href="reviews.html">REVIEWS</a></li>
+                    <li><a id="gallery" href="gallery.html">GALLERY</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <img src="../images/rainbow.png" alt="rainbow">
+            </div>
+
+        </header>
+
+        <section class="news-hero-section">
+            <div class="hero-bg">
+                <div class="heroTitle">
+                    <h2>NEWS</h2>
+                    <img src="../images/rainbow-divider.png">
+                    <p>Catch up to the latest Persona news.</p>
+                </div>
+
+                <img src="../images/yu-hero.png" alt="Games Background" class="news-heroImage">
+            </div>
+        </section>
+
+        <section class="news-container">
+            <div class="news-list fade-in">
+                <div class="news-card">
+                    <img src="../images/p5x-global-news.png">
+                    <div class="news-content">
+                        <p>May 13</p>
+                        <h3>Persona 5: The Phantom X Releasing Globally June 26</h3>
+                        <p>Persona 5: The Phantom X is officially launching worldwide. The free-to-play gacha game will soon launch on iOS, Android, and PC on 26 June, with pre-registrations now open on all platforms.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="../images/p4-remake-news.png">
+                    <div class="news-content">
+                        <p>April 21</p>
+                        <h3>Possible Persona 4 Remake Domain Name Updated</h3>
+                        <p>On March 20, 2025, it was discovered that Atlus had potentially registered a Persona 4 Remake domain name called “P4RE.JP.” This domain name has been updated today, on April 21, 2025.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="../images/persona-sales-news.png">
+                    <div class="news-content">
+                        <p>May 12</p>
+                        <h3>Persona Series Sold 830k Copies Worldwide From January to March 2025</h3>
+                        <p>According to SEGA, the Persona series sold approximately 830k units worldwide (including digital and physical sales) in January, February, and March 2025.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="../images/p3-p5x-news.png">
+                    <div class="news-content">
+                        <p>May 4</p>
+                        <h3>Persona 5: The Phantom X Key Visual Wallpapers Released</h3>
+                        <p>Perfect World Games has released clean versions of previously released Persona 5 The Phantom X key visuals to be used as PC or mobile wallpapers.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="../images/yukari-news.png">
+                    <div class="news-content">
+                        <p>May 17</p>
+                        <h3>Persona 5: The Phantom X Yukari Takeba Overview Trailer</h3>
+                        <p>Persona 5: The Phantom X is officially launching worldwide. The free-to-play gacha game will soon launch on iOS, Android, and PC on 26 June, with pre-registrations now open on all platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footerContainer">
+                <div class="footerTop">
+                    <div class="stayConnected">
+                        <p>Stay connected</p>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/AtlusWest/" target="_blank" id="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/atlus_west" target="_blank" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/Atlus_West" target="_blank" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.reddit.com/r/PERSoNA/" target="_blank" id="reddit"><i class="fa-brands fa-reddit"></i></a>
+                        <a href="https://www.youtube.com/atlus" target="_blank" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="footerBottom">
+                    <div class="companyName">
+                        <img src="../images/atlus.svg">
+                    </div>
+
+                    <div class="footerLinks">
+                        <ul>
+                            <li><a href="pages/news.html">News</a></li>
+                            <li><a href="https://atlus.com/contact/" target="_blank">Support</a></li>
+                            <li><a href="https://careers.sega.com/" target="_blank">Careers</a></li>
+                            <li><a href="https://privacy.sega.com/en/sega-of-america-inc-privacy-policy" target="_blank">Privacy</a></li>
+                            <li><a href="https://atlus.com/company/" target="_blank">Company</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bar">
+                <p>&copy; 2025 Persona Fan Project. All content is fan-made. Persona is a trademark of ATLUS. Website design by Kelvin.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('Fade-in test running');
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('Element visible:', entry.target);
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+        fadeInElements.forEach(el => observer.observe(el));
+    });
+    </script>
+</body>
+</html>
